@@ -9,47 +9,64 @@ public class Student {
 
     private String firstName;
     private String lastName;
-    private String group;
-    HashMap<String, Integer> exams;
+    private Group group;
+    HashMap<Integer, Exam> exams;
 
-    public HashMap<String, Integer> getExams() {
+    public HashMap<Integer, Exam> getExams() {
         return exams;
     }
 
-    public void setExams(HashMap<String, Integer> exams) {
+    public void setExams(HashMap<Integer, Exam> exams) {
         this.exams = exams;
     }
 
-    public Student(String firstName, String lastName, String group) {
+    public Student(String firstName, String lastName, Group group) {
 
-        this.exams = new HashMap<String, Integer>();
+        this.exams = new HashMap<Integer, Exam>();
         this.firstName = firstName;
         this.group = group;
         this.lastName = lastName;
     }
 
-    public void markAdd(String exam, int mark) {
+    public void markAdd(int id, Exam exam) {
 
-        exams.put(exam, mark);
+        exams.put(id, exam);
 
     }
 
-    public void markDelete(String exam) {
-        if (exams.containsKey(exam)) {
-            exams.remove(exam);
+    public void markDelete(int id) {
+        if (exams.containsKey(id)) {
+            exams.remove(id);
         } else {
             throw new InputMismatchException();
         }
+    }
+
+
+    public int findHighest(String subject){
+        int highest = 0;
+        for(Map.Entry<Integer, Exam> e : exams.entrySet()){
+
+            if(e.getValue().subject.equals(subject)){
+                if(highest < e.getValue().mark){
+                    highest = e.getValue().mark;
+                }
+
+            }
+
+        }
+        return highest;
     }
 
     public ArrayList<String> findExamsWithMark(int mark) {
 
         ArrayList<String> examsWithMark = new ArrayList<String>();
 
-        for (Map.Entry<String, Integer> e : exams.entrySet()) {
+        for (Map.Entry<Integer, Exam> e : exams.entrySet()) {
 
-            if (e.getValue() == mark) {
-                examsWithMark.add(e.getKey());
+
+            if (e.getValue().mark == mark ) {
+                examsWithMark.add(e.getValue().subject);
             }
         }
         return examsWithMark;
@@ -58,19 +75,33 @@ public class Student {
     public double averageMark() {
 
         double average = 0;
-        for (Integer i : exams.values()) {
-            average += i;
+        for (Map.Entry<Integer, Exam> e  : exams.entrySet()) {
+            average += e.getValue().mark;
         }
         return average /= exams.size();
     }
 
     public static void main(String[] args) {
 
-        Student student = new Student("Alex", "Tsukanov", "OOP");
-        student.markAdd("Mathematics", 5);
+        Group OP = new Group(1, "Finances");
+
+        Student student = new Student("Alex", "Tsukanov", OP);
+
+        Exam Mathematics = new Exam(2, "Mathematics");
+        Exam Geometry = new Exam(4, "Geometry");
+        Exam Geometry1 = new Exam(5, "Geometry");
+
+        student.markAdd(1, Mathematics);
+        student.markAdd(2, Geometry);
+        student.markAdd(3, Geometry1);
+
+        System.out.println(student.findHighest("Geometry"));
+
         System.out.println(student.averageMark());
+
         student.findExamsWithMark(5);
-        student.markDelete("Mathematics");
+
+
 
     }
 

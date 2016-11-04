@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Map;
 
 public class StudentTest {
 
@@ -15,10 +16,14 @@ public class StudentTest {
     @BeforeClass
     public static void StudentBefore(){
 
-        student  = new Student("Alex", "Tsukanov", "OOP");
-        student.markAdd("Biology", 3);
-        student.markAdd("Algebra", 4);
-        student.markAdd("Philosophy", 5);
+        Group OP = new Group(1, "Finances");
+        Exam Mathematics = new Exam(2, "Mathematics");
+        Exam Geometry = new Exam(4, "Geometry");
+
+        student  = new Student("Alex", "Tsukanov", OP);
+
+        student.markAdd(1, Mathematics);
+        student.markAdd(2, Geometry);
 
     }
 
@@ -27,7 +32,7 @@ public class StudentTest {
     public void markAdd(){
 
 
-        Assert.assertEquals(3, student.getExams().size());
+        Assert.assertEquals(2, student.getExams().size());
 
 
     }
@@ -56,8 +61,8 @@ public class StudentTest {
 
         double average = 0;
 
-        for (Integer i : student.getExams().values()) {
-            average += i;
+        for (Map.Entry<Integer, Exam> e  : student.getExams().entrySet()) {
+            average += e.getValue().mark;
         }
         average /= student.getExams().size();
         Assert.assertEquals(average, student.averageMark(), 0.1);
