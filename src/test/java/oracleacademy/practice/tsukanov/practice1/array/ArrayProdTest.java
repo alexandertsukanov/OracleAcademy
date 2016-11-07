@@ -1,7 +1,5 @@
-package oracleacademy.practice.tsukanov.junit.array;
+package oracleacademy.practice.tsukanov.practice1.array;
 
-import oracleacademy.practice.tsukanov.junit.array.ArrayProd;
-import oracleacademy.practice.tsukanov.junit.array.ArraySum;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

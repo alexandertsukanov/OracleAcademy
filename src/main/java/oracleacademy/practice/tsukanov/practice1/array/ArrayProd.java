@@ -1,4 +1,4 @@
-package oracleacademy.practice.tsukanov.junit.array;
+package oracleacademy.practice.tsukanov.practice1.array;
 
 /**
  * Created by alex on 11/1/16.

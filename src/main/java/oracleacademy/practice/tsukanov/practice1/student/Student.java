@@ -1,4 +1,4 @@
-package oracleacademy.practice.tsukanov.junit.student;
+package oracleacademy.practice.tsukanov.practice1.student;
 
 import java.util.*;
 
