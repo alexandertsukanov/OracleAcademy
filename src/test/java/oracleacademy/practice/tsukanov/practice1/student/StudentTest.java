@@ -40,7 +40,7 @@ public class StudentTest {
     @Test(expected = InputMismatchException.class)
     public void markDelete(){
 
-        student.markDelete("Algera");
+        student.markDelete(6);
 
     }
 
