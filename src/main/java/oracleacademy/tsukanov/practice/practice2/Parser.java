@@ -1,7 +1,8 @@
-package oracleacademy.practice.tsukanov.practice2;
+package oracleacademy.tsukanov.practice.practice2;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -12,12 +13,13 @@ public class Parser {
 
     public void findNotebooks(File file) throws IOException{
 
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = new Scanner(file, "windows-1251");
+
+        PrintWriter printWriter = new PrintWriter("one.txt");
 
         while (scanner.hasNextLine()){
             String findIn = scanner.findInLine("(Ноутбук\\s.{0,35}\\(.{0,10}\\).{0,}кг)");
-            String price = scanner.findInLine("(<span\\sclass=\"price\\scost\">\\d*\\sгрн</span>)");
-            System.out.println(price);
+//            String price = scanner.findInLine("(<span\\sclass=\"price\\scost\">\\d*\\sгрн</span>)");
             if(findIn != null){
                 String findIn2 = findIn.replaceAll("(<.{0,}>.{0,}</.{0,}>)|(\".{0,}>)"," ");
                 System.out.println(findIn2);

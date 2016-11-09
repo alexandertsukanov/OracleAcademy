@@ -1,4 +1,4 @@
-package oracleacademy.practice.tsukanov.practice1.array;
+package oracleacademy.tsukanov.practice.practice1.array;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

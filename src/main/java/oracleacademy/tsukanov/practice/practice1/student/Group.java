@@ -1,4 +1,4 @@
-package oracleacademy.practice.tsukanov.practice1.student;
+package oracleacademy.tsukanov.practice.practice1.student;
 
 /**
  * Created by alex on 11/1/16.

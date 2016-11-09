@@ -1,4 +1,4 @@
-package oracleacademy.practice.tsukanov.practice1.student;
+package oracleacademy.tsukanov.practice.practice1.student;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
