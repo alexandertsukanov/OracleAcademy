@@ -5,8 +5,6 @@ package oracleacademy.tsukanov.homework.task1.car;
  */
 public class Car {
 
-
-
     public static void main(String[] args) {
 
 
