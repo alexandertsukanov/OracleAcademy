@@ -62,16 +62,17 @@ public class StringUtils {
         return string.matches(emailRegex);
     }
 
-    public ArrayList<String> phoneFinder(File file) throws IOException{
+    public ArrayList<String> phoneFinder(File file, String charset) throws IOException{
         ArrayList<String> phones = new ArrayList<String>();
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = new Scanner(file, charset);
         Pattern pattern = Pattern.compile("\\+\\d\\(\\d{3}\\)\\d{4}\\-\\d{2}\\-\\d{2}");
         try {
             while (scanner.hasNext()) {
-                if (scanner.hasNext(pattern)) {
-                    phones.add(scanner.next(pattern));
-                }
-            scanner.next();
+               if(scanner.hasNext(pattern)){
+                   phones.add(scanner.next());
+               }else {
+                   scanner.next();
+               }
             }
         }
         catch (InputMismatchException ex){
@@ -88,9 +89,9 @@ public class StringUtils {
 
         File phone = new File("phones.txt");
         String myString = "javacodegeeks@gmailcom";
-        ArrayList<String> phoneFinder =  new StringUtils().phoneFinder(phone);
+        ArrayList<String> phoneFinder =  new StringUtils().phoneFinder(phone, "UTF-8");
         for(String p : phoneFinder){
-//            System.out.println(p);
+            System.out.println(p);
         }
 
     }
