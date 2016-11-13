@@ -25,7 +25,10 @@ public class Parser {
                 }
                 else {
                     stringBuilder.append("<p>");
-                    stringBuilder.append(s.replaceAll("(\\*{2})(\\w+)(\\*{2})", "<strong>$2</strong>").replaceAll("((?<=\\s)\\*)(\\w+)(\\*(?=\\s))", "<em>$2</em>").replaceAll("(\\[)(\\w.+)(\\])(\\()(\\w.+)(\\))", "<a href=\"$5\">$2</a>"));
+                    stringBuilder.append(s
+                            .replaceAll("(\\*{2})(\\w+)(\\*{2})", "<strong>$2</strong>")
+                            .replaceAll("((?<=\\s)\\*)(\\w+)(\\*(?=\\s))", "<em>$2</em>")
+                            .replaceAll("(\\[)(\\w.+)(\\])(\\()(\\w.+)(\\))", "<a href=\"$5\">$2</a>"));
                     stringBuilder.append("</p>\n");
                 }
             }
