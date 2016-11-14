@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Created by alex on 11/1/16.
+ * Created by tsukanov on 11/1/16.
  */
 public class ArrayProdTest {
 

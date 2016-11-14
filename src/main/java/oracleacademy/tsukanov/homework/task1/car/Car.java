@@ -1,7 +1,7 @@
 package oracleacademy.tsukanov.homework.task1.car;
 
 /**
- * Created by alex on 11/1/16.
+ * Created by tsukanov on 11/1/16.
  */
 public class Car {
 

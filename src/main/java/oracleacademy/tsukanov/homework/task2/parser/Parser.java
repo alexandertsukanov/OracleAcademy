@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.URISyntaxException;
 
 /**
- * Created by alex on 11/12/16.
+ * Created by tsukanov on 11/12/16.
  */
 public class Parser {
 

@@ -1,9 +1,12 @@
 package oracleacademy.tsukanov.practice.practice1.student;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
 
 /**
- * Created by alex on 11/1/16.
+ * Created by tsukanov on 11/1/16.
  */
 public class Student {
 
@@ -42,13 +45,12 @@ public class Student {
         }
     }
 
-
-    public int findHighest(String subject){
+    public int findHighest(String subject) {
         int highest = 0;
-        for(Map.Entry<Integer, Exam> e : exams.entrySet()){
+        for (Map.Entry<Integer, Exam> e : exams.entrySet()) {
 
-            if(e.getValue().subject.equals(subject)){
-                if(highest < e.getValue().mark){
+            if (e.getValue().subject.equals(subject)) {
+                if (highest < e.getValue().mark) {
                     highest = e.getValue().mark;
                 }
 
@@ -65,7 +67,7 @@ public class Student {
         for (Map.Entry<Integer, Exam> e : exams.entrySet()) {
 
 
-            if (e.getValue().mark == mark ) {
+            if (e.getValue().mark == mark) {
                 examsWithMark.add(e.getValue().subject);
             }
         }
@@ -75,7 +77,7 @@ public class Student {
     public double averageMark() {
 
         double average = 0;
-        for (Map.Entry<Integer, Exam> e  : exams.entrySet()) {
+        for (Map.Entry<Integer, Exam> e : exams.entrySet()) {
             average += e.getValue().mark;
         }
         return average /= exams.size();
@@ -100,7 +102,6 @@ public class Student {
         System.out.println(student.averageMark());
 
         student.findExamsWithMark(5);
-
 
 
     }

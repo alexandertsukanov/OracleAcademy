@@ -1,7 +1,7 @@
 package oracleacademy.tsukanov.practice.practice2;
 
 /**
- * Created by alex on 11/8/16.
+ * Created by tsukanov on 11/8/16.
  */
 public class Notebook {
 

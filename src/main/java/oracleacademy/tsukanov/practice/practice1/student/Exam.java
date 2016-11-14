@@ -1,7 +1,7 @@
 package oracleacademy.tsukanov.practice.practice1.student;
 
 /**
- * Created by alex on 11/1/16.
+ * Created by tsukanov on 11/1/16.
  */
 public class Exam {
 

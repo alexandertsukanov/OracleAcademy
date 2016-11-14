@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
- * Created by alex on 11/11/16.
+ * Created by tsukanov on 11/11/16.
  */
 public class StringUtils {
 
@@ -52,11 +52,13 @@ public class StringUtils {
     public String wrapWords(String string) {
         String[] arr = string.split("\\.");
         String answer = "";
-        System.out.println(arr.length);
         for (int i = 0; i < arr.length; i++) {
+            if(i >= 1){
+                answer += " ";
+            }
             String[] space = arr[i].split("\\s+");
             arr[i] = arr[i].replaceAll("^\\w*", space[space.length - 1]).replaceAll("\\w+$", space[0]).trim();
-            answer += arr[i] + ". ";
+            answer += arr[i] + ".";
         }
         return answer;
     }
