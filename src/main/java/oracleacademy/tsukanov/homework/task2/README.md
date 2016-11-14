@@ -26,7 +26,8 @@ Homework # 2
 Примечание: Элементов вложенных друг в друга (“*начало em **теперь strong**, и продолжение*”) быть не может!!!
 
 ##### Пример:
-```Header line
+```
+##Header line
 Simple line *with* em
 Simple **line** with strong
 Line with link [Link to google](https://www.google.com) in center
@@ -34,7 +35,7 @@ Line **with** *many* **elements** and link [Link to FB](https://www.facebook.com
 ```
 
 ##### Результат преобразования:
-```html
+```
 <html>
 <body>
 <h2>Header line</h2>
