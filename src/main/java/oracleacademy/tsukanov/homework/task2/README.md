@@ -26,7 +26,7 @@ Homework # 2
 Примечание: Элементов вложенных друг в друга (“*начало em **теперь strong**, и продолжение*”) быть не может!!!
 
 ##### Пример:
-```
+```markdown
 ##Header line
 Simple line *with* em
 Simple **line** with strong
