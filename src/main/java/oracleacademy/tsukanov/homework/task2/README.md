@@ -35,7 +35,7 @@ Line **with** *many* **elements** and link [Link to FB](https://www.facebook.com
 ```
 
 ##### Результат преобразования:
-```
+```html
 <html>
 <body>
 <h2>Header line</h2>
