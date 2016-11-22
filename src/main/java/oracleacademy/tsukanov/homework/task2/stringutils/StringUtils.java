@@ -3,6 +3,7 @@ package oracleacademy.tsukanov.homework.task2.stringutils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -11,18 +12,6 @@ import java.util.regex.Pattern;
  * Created by tsukanov on 11/11/16.
  */
 public class StringUtils {
-
-    public static void main(String[] args) throws IOException {
-
-
-        File phone = new File("phones.txt");
-        String myString = "javacodegeeks@gmailcom";
-        ArrayList<String> phoneFinder = new StringUtils().phoneFinder(phone, "UTF-8");
-        for (String p : phoneFinder) {
-            System.out.println(p);
-        }
-
-    }
 
     public String reverse(String string) {
         String answer = "";
@@ -56,15 +45,16 @@ public class StringUtils {
             if(i >= 1){
                 answer += " ";
             }
+            arr[i] = arr[i].trim();
             String[] space = arr[i].split("\\s+");
-            arr[i] = arr[i].replaceAll("^\\w*", space[space.length - 1]).replaceAll("\\w+$", space[0]).trim();
+            arr[i] = arr[i].replaceAll("^[\\s]\\w+|^\\w+", space[space.length - 1]).replaceAll("\\w+$", space[0]).trim();
             answer += arr[i] + ".";
         }
         return answer;
     }
 
     public boolean containABC(String string) {
-        return string.contains("a") || string.contains("b") || string.contains("c");
+        return string.matches("[abc]+");
     }
 
     public boolean isDate(String date) {
@@ -94,5 +84,11 @@ public class StringUtils {
             scanner.close();
         }
         return phones;
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        System.out.println(new StringUtils().containABC("abcabcacb"));
+
     }
 }

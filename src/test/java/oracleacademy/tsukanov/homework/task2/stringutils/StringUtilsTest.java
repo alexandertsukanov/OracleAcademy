@@ -15,7 +15,7 @@ public class StringUtilsTest {
 
     StringUtils stringUtils = new StringUtils();
 
-    @Test
+     @Test
     public void testReverse() throws Exception {
         String s = "Hello";
         Assert.assertEquals(stringUtils.reverse(s), "olleH");
@@ -37,8 +37,8 @@ public class StringUtilsTest {
 
     @Test
     public void testWrapWords() throws Exception {
-        String s = "Hello world. Java world.";
-        Assert.assertEquals(stringUtils.wrapWords(s), "world Hello. world Java.");
+        String s = "Hello world. Java world I. Hello Java one.";
+        Assert.assertEquals(stringUtils.wrapWords(s), "world Hello. I world Java. one Java Hello.");
     }
 
     @Test
