@@ -164,7 +164,7 @@ public class MyDequeImpl<E> implements MyDeque<E> {
 
     @Override
     public void clear() {
-        for (Node<E> s = first; s != null; s = s.next) {
+        for (Node<E> s = first; s != null;) {
             Node<E> next = s.next;
             s.element = null;
             s.prev = null;

@@ -8,7 +8,8 @@ public class MyDequeImpl<E> implements MyDeque<E> {
    private Node<E> last;
 
    private int size = 0;
-   private int lasttoString = 0;
+
+   private int lastToString = 0;
 
 
     private static class Node<E> {
@@ -106,7 +107,7 @@ public class MyDequeImpl<E> implements MyDeque<E> {
 
     @Override
     public void clear() {
-        for (Node<E> s = first; s != null; s = s.next) {
+        for (Node<E> s = first; s != null;) {
             Node<E> next = s.next;
             s.element = null;
             s.prev = null;
@@ -145,7 +146,7 @@ public class MyDequeImpl<E> implements MyDeque<E> {
 
     @Override
     public String toString() {
-       return toArray()[lasttoString++].toString();
+       return toArray()[lastToString++].toString();
     }
 
 }
