@@ -148,19 +148,4 @@ public class MyDequeImpl<E> implements MyDeque<E> {
        return toArray()[lasttoString++].toString();
     }
 
-    public static void main(String[] args) {
-
-        MyDeque<Integer> integerMyDeque = new MyDequeImpl<>();
-        MyDeque<Integer> integerMyDeque2 = new MyDequeImpl<>();
-
-        integerMyDeque.addLast(7);
-        integerMyDeque.addLast(5);
-
-        System.out.println(integerMyDeque.toString());
-        System.out.println(integerMyDeque.toString());
-
-
-
-
-    }
 }
