@@ -14,7 +14,7 @@ public class Demo {
 
             ListIterator<Integer> it2 = myDeque.listIterator();
 
-            //Forward
+            //Iterate Forward
             while (it2.hasNext()){
                 Integer i = it2.next();
                 System.out.print(i + " ");
@@ -22,7 +22,7 @@ public class Demo {
 
             System.out.println();
 
-            //Backward and set up 5 instead of 3
+            //Iterate Backward and setting up 5 instead of 3
             while (it2.hasPrevious()){
                 Integer i = it2.previous();
                 if(i.equals(3)){
@@ -31,7 +31,7 @@ public class Demo {
                 System.out.print(i + " ");
             }
 
-            //Forward again
+            //Iterate Forward again
             System.out.println();
             while (it2.hasNext()){
                 Integer i = it2.next();

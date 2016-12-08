@@ -10,6 +10,7 @@ public class MyDequeImpl<E> implements MyDeque<E> {
     private Node<E> last;
 
     private int size = 0;
+
     private int lasttoString = 0;
 
     @Override
@@ -17,7 +18,10 @@ public class MyDequeImpl<E> implements MyDeque<E> {
         return new IteratorImpl();
     }
 
-    public ListIterator<E> listIterator() { return new ListIteratorImpl(); }
+    @Override
+    public ListIterator<E> listIterator() {
+        return new ListIteratorImpl();
+    }
 
     private static class Node<E> {
 

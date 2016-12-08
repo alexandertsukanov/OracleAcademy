@@ -1,8 +1,5 @@
 package oracleacademy.tsukanov.homework.task4_1;
 
-/**
- * Created by tsukanov on 12/2/16.
- */
 public class Computer implements Comparable<Computer> {
 
     String model;
