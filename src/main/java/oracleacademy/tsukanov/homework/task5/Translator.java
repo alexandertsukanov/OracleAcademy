@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task_5;
+package oracleacademy.tsukanov.homework.task5;
 
 import java.io.*;
 import java.util.HashMap;
