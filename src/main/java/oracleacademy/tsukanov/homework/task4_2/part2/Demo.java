@@ -11,8 +11,9 @@ public class Demo {
 
             MyDequeImpl<Integer> myDeque = new MyDequeImpl<Integer>();
             myDeque.addFirst(3);
-
-
+            myDeque.addFirst(4);
+            myDeque.addFirst(5);
+            myDeque.addFirst(6);
 
             Iterator<Integer> it2 = myDeque.iterator();
 
@@ -34,15 +35,6 @@ public class Demo {
 
             System.out.println(Arrays.toString(myDeque.toArray()));
 
-//            LinkedList<Integer> objects = new LinkedList<>();
-//            objects.addFirst(2);
-//
-//            Iterator<Integer> it = objects.iterator();
-//            while (it.hasNext()) {
-//                Integer next = it.next();
-//                System.out.println(next);
-//            }
-//
-//            System.out.println(Arrays.toString(objects.toArray()));
+
         }
 }

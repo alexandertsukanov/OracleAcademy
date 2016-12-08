@@ -63,7 +63,13 @@ public class MyDequeImpl<E> implements MyDeque<E> {
         private boolean isremoveCalled = false;
 
         public boolean hasNext() {
-            return current != null;
+            if(current != null){
+                return true;
+            }
+            else {
+                current = lastReturned;
+                return false;
+            }
         }
 
         public E next() {
