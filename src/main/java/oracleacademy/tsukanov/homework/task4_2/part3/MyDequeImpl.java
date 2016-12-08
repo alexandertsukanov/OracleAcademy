@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task4_2.part2;
+package oracleacademy.tsukanov.homework.task4_2.part3;
 
 import java.util.Iterator;
 
@@ -16,6 +16,8 @@ public class MyDequeImpl<E> implements MyDeque<E> {
     public Iterator<E> iterator() {
         return new IteratorImpl();
     }
+
+    public ListIterator<E> listIterator() { return new ListIteratorImpl(); }
 
     private static class Node<E> {
 
@@ -61,13 +63,23 @@ public class MyDequeImpl<E> implements MyDeque<E> {
         private Node<E> lastReturned = current;
         private boolean isnextCalled = false;
         private boolean isremoveCalled = false;
+        private boolean ispreviousCalled = false;
+        private boolean isSetCalled = false;
 
         public boolean hasNext() {
-            return current != null;
+            if(current != null){
+                return true;
+            }
+            else {
+                current = lastReturned;
+                return false;
+            }
         }
 
         public E next() {
             isnextCalled = true;
+            ispreviousCalled = true;
+            isSetCalled = false;
             isremoveCalled = false;
             lastReturned = current;
             current = current.next;
@@ -75,7 +87,7 @@ public class MyDequeImpl<E> implements MyDeque<E> {
         }
 
         public void remove() {
-            if(!isnextCalled || isremoveCalled){
+            if(!isnextCalled || !ispreviousCalled || isremoveCalled){
                 throw new IllegalStateException();
             }
             if(lastReturned.prev == null && lastReturned.next == null){
@@ -95,6 +107,55 @@ public class MyDequeImpl<E> implements MyDeque<E> {
             }
             isremoveCalled = true;
             size--;
+        }
+    }
+
+    private class ListIteratorImpl extends IteratorImpl implements ListIterator<E> {
+
+        @Override
+        public boolean hasNext() {
+            return super.hasNext();
+        }
+
+        @Override
+        public E next() {
+            return super.next();
+        }
+
+        @Override
+        public void remove() {
+            super.remove();
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            if(super.current != null){
+                return true;
+            }
+            else {
+                super.current = super.lastReturned;
+                return false;
+            }
+        }
+
+        @Override
+        public E previous() {
+            super.ispreviousCalled = true;
+            super.isnextCalled = true;
+            super.isSetCalled = false;
+            super.isremoveCalled = false;
+            super.lastReturned = super.current;
+            super.current = super.current.prev;
+            return super.lastReturned.element;
+        }
+
+        @Override
+        public void set(E e) {
+            if(!super.ispreviousCalled || !super.isnextCalled || super.isSetCalled){
+                throw new IllegalStateException();
+            }
+            super.lastReturned.element = e;
+            super.isSetCalled = true;
         }
     }
 
