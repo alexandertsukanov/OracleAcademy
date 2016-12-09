@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Translator {
 
-    private String getTransaltor(String translatorPath, String filePath) throws FileNotFoundException, UnsupportedEncodingException {
+    private String translate(String translatorPath, String translatableFilePath) throws FileNotFoundException, UnsupportedEncodingException {
         Pattern p = Pattern.compile("\\w+");
         HashMap<String, String> translation = new HashMap<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(translatorPath), "windows-1251"));
@@ -16,33 +16,30 @@ public class Translator {
         String word;
         try {
             while ((word = br.readLine()) != null) {
-                System.out.println(word);
                 String[] words = word.split(";-;");
                 translation.put(words[0], words[1]);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        br = new BufferedReader(new FileReader(filePath));
+        br = new BufferedReader(new FileReader(translatableFilePath));
         try {
             while ((word = br.readLine()) != null) {
                 Matcher m = p.matcher(word);
                 while (m.find()) {
-                    sb.append((translation.get(m.group().toLowerCase()) + " "));
+                    sb.append(translation.get(m.group().toLowerCase())).append(" ");
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(sb.toString());
         return sb.toString();
     }
 
-    void translationMain(String translatorPath, String filePath) throws IOException {
-
+    void translatorInit(String translatorPath, String translatableFilePath) throws IOException {
+        File directory;
         int action;
         Scanner in = new Scanner(System.in);
-        File directory;
         System.out.println("Welcome to Translator!");
         menu:
         do {
@@ -63,10 +60,12 @@ public class Translator {
                         }
                     });
                     for (int i = 0; i < listOfFiles.length; i++) {
-                        System.out.println(i + ". " + listOfFiles[i].getName().replaceAll("\\.\\w+", ""));
+                        System.out.println(i + 1 + ". " + listOfFiles[i].getName().replaceAll("\\.\\w+", ""));
                     }
                     action = in.nextInt();
-                    getTransaltor(listOfFiles[action].getAbsolutePath(), filePath);
+                    String result =  translate(listOfFiles[action - 1].getAbsolutePath(), translatableFilePath);
+                    System.out.println();
+                    System.out.println(result);
                     continue menu;
                 case 2:
                     System.out.println("Bye");
@@ -77,11 +76,4 @@ public class Translator {
             }
         } while (true);
     }
-
-    public static void main(String[] args) throws IOException {
-        Translator translator = new Translator();
-        translator.translationMain("/Users/alex/Projects/Java/OracleAcademy/translators", "/Users/alex/Projects/Java/OracleAcademy/translators/English.txt");
-    }
-
-
 }
