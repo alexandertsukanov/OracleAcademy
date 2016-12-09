@@ -7,7 +7,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Translator {
-
     private String translate(String translatorPath, String translatableFilePath, String charset) throws FileNotFoundException, UnsupportedEncodingException {
         Pattern p = Pattern.compile("([A-Za-zА-Яа-я0-9ё]+)([\\W]+|$)");
         HashMap<String, String> translation = new HashMap<>();
