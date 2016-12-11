@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task6.BookUtility;
+package oracleacademy.tsukanov.homework.task6.bookutility;
 
 public class Book {
 

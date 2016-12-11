@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task6.FileEditor;
+package oracleacademy.tsukanov.homework.task6.fileeditor;
 
 import java.io.File;
 import java.io.IOException;
