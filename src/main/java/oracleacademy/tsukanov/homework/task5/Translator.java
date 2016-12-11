@@ -41,6 +41,7 @@ public class Translator {
                     continue menu;
                 case 2:
                     System.out.println("Bye, bye!");
+                    in.close();
                     System.exit(0);
                     break;
                 default:
