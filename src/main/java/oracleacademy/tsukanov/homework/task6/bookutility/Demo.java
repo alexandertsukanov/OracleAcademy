@@ -1,9 +1,9 @@
-package oracleacademy.tsukanov.task6.bookutility;
+package oracleacademy.tsukanov.homework.task6.bookutility;
 
 import java.io.File;
 import java.io.IOException;
 
-import static oracleacademy.tsukanov.task6.bookutility.BookUtility.*;
+import static oracleacademy.tsukanov.homework.task6.bookutility.BookUtility.*;
 
 public class Demo {
         public static void main(String args[]) throws IOException {
