@@ -1,0 +1,3 @@
+A.Pushkin;Eugene Onegin;1823
+L.Tolstoy;War and Peace;1863
+M.Reed;The Headless Horseman;1865

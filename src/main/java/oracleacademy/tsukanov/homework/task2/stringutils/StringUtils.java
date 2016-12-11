@@ -69,7 +69,7 @@ public class StringUtils {
     public ArrayList<String> phoneFinder(File file, String charset) throws IOException {
         ArrayList<String> phones = new ArrayList<String>();
         Scanner scanner = new Scanner(file, charset);
-        Pattern pattern = Pattern.compile("\\+\\d\\(\\d{3}\\)\\d{4}\\-\\d{2}\\-\\d{2}");
+        Pattern pattern = Pattern.compile("\\+\\d{2}\\(\\d{3}\\)\\d{3}\\-\\d{2}\\-\\d{2}");
         try {
             while (scanner.hasNext()) {
                 if (scanner.hasNext(pattern)) {
@@ -88,7 +88,10 @@ public class StringUtils {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new StringUtils().containABC("abcabcacb"));
+        StringUtils stringUtils = new StringUtils();
 
+        System.out.println(stringUtils.containABC("abcabcacb"));
+
+        stringUtils.phoneFinder(new File("additional/phone.txt"), "UTF-8").forEach(System.out::print);
     }
 }

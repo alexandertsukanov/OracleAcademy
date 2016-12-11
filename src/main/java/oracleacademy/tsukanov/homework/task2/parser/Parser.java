@@ -44,7 +44,7 @@ public class Parser {
 
     public static void main(String[] args) throws IOException, URISyntaxException{
 
-        String a = new Parser().parseMdToHTML("writed.md", "writed.html");
+        String a = new Parser().parseMdToHTML("additional/writed.md", "additional/writed.html");
         System.out.println(a);
     }
 
