@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task5;
+package oracleacademy.tsukanov.homework.task5.translator;
 
 import java.io.*;
 import java.util.HashMap;

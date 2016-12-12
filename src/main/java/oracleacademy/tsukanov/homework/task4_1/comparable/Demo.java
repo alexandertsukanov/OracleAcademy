@@ -1,6 +1,4 @@
-package oracleacademy.tsukanov.homework.task4_1;
-
-import static oracleacademy.tsukanov.homework.task4_1.ObjectComparator.compare;
+package oracleacademy.tsukanov.homework.task4_1.comparable;
 
 public class Demo {
 
@@ -10,14 +8,14 @@ public class Demo {
             strings[1] = "B";
             strings[2] = "A";
 
-            System.out.println(compare(strings));
+            System.out.println(ObjectComparator.compare(strings));
 
             Computer[] computers = new Computer[3];
             computers[0] = new Computer(520, "Dell", 10 );
             computers[1] = new Computer(520, "Asus", 10 );
             computers[2] = new Computer(520, "HP", 10 );
 
-            System.out.println(compare(computers));
+            System.out.println(ObjectComparator.compare(computers));
 
             Integer[] integers = new Integer[3];
 
@@ -25,7 +23,7 @@ public class Demo {
             integers[1] = 15;
             integers[2] = 10;
 
-            System.out.println(compare(integers));
+            System.out.println(ObjectComparator.compare(integers));
 
             Car[] cars = new Car[3];
 

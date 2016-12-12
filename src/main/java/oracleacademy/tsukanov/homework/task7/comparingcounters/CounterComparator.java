@@ -24,7 +24,6 @@ public class CounterComparator extends Thread {
                     e.printStackTrace();
                 }
                 counter.incCounter2();
-
         }
     }
 }

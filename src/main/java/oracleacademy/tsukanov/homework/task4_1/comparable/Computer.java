@@ -1,4 +1,4 @@
-package oracleacademy.tsukanov.homework.task4_1;
+package oracleacademy.tsukanov.homework.task4_1.comparable;
 
 public class Computer implements Comparable<Computer> {
 
