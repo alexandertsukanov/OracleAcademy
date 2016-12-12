@@ -10,6 +10,7 @@ Homework # 4.2
 ## Задание:
 ### Часть №1 (пакет ua.org.oa.<JIRALOGIN>.task4_2.part1)
 * Создать generic интерфейс MyDeque (двусвязный список) следующего содержания:
+
 ```code java
 public interface MyDeque<E> {
 // добавить элемент в начало списка
@@ -39,6 +40,7 @@ boolean containsAll(MyDeque<? extends E> deque);
 }
 ```
 * 1.2. Создать generic класс контейнер MyDequeImpl, который реализует MyDeque (реализовать все методы интерфейса).
+
 ```code java
 public class MyDequeImpl<E> implements MyDeque<E> {...}
 
@@ -61,11 +63,13 @@ Node<E> prev;
 Node(E element, Node<E> prev, Node<E> next) {...}
 }
 ```
+
 * 1.3. Переопределить метод toString таким образом, чтобы результат выводился в виде:
 {результат вызова toString для элемента 1, результат вызова toString для элемента 2, ... }
 * 1.4. Создать класс Demo, который демонстрирует работу всех методов контейнера.
 Например, так:
-```code java
+
+```java
 public class Demo {
 public static void main(String[] args) {
 MyDeque<Number> deque = new MyDequeImpl<Number>();
@@ -83,7 +87,8 @@ System.out.println("list contains 433 --> " + deque.contains(433));
 public interface MyDeque<E> extends Iterable<E> {...}
 
 Добавить в класс MyDequeImpl<E> метод, который реализует метод Iterable iterator:
-```code java
+
+```java
 public Iterator<E> iterator() { return new IteratorImpl(); }
 
 метод должен возвращает объект внутреннего класса IteratorImpl:
@@ -122,8 +127,10 @@ throw new IllegalStateException();
 
 }
 ```
+
 * 2.2. Продемонстрировать работу итератора с помощью циклов while и for each:
-```code java
+
+```java
 public class Demo {
 
 public static void main(String[] args) {
@@ -155,7 +162,8 @@ System.out.println(it.next());
 Скопировать созданные в части №2 типы в пакет part3 (изменив декларацию пакета вверху каждого типа).
 
 * 3.1. Определить интерфейс ListIterator:
-```code java
+
+```java
 public interface ListIterator<E> extends Iterator<E> { // java.util.Iterator
 
 // проверяет, есть ли предыдущий элемент для выборки методом previous
@@ -176,14 +184,14 @@ void remove();
 
 }
 ```
+
 Методы set/remove могут быть вызваны только после next/previous. Повторный вызов (подряд) set/remove должен приводить к выбросу исключения IllegalStateException
 
-* 3.2. Создать интерфейс ListIterable:
-```code java
-public interface ListIterable<E> { ListIterator<E> listIterator(); }
+* 3.2. Создать интерфейс ListIterable: public interface ListIterable<E> { ListIterator<E> listIterator(); }
 
-3.3. Добавить к интерфейсу MyDeque наследование интерфейса ListIterable:
+* 3.3. Добавить к интерфейсу MyDeque наследование интерфейса ListIterable:
 
+```java
 public interface MyDeque<E> extends Iterable<E>, ListIterable<E> {...}
 3.4. Добавить в класс MyDequeImpl метод
 public ListIterator<E> listIterator() { return new ListIteratorImpl(); }
